@@ -160,16 +160,15 @@ public class Graph {
     }
 
     private void printGraph(){
-        //Codigo para imprimir o grafo
         System.out.printf("     ");
         for(int i = 0; i<q_vertices();i++){
-            if(i<10){System.out.printf("  %d  ", i);}
-            else{System.out.printf(" %d  ", i);}
+            if(i<10){System.out.printf("  %d  ", i+1);}
+            else{System.out.printf(" %d  ", i+1);}
         }
         System.out.println();
         for(int i = 0; i<q_vertices();i++){
-            if(i<10){System.out.printf(" %d | ",i);}
-            else{System.out.printf("%d | ",i);}
+            if(i<9){System.out.printf(" %d | ",i+1);}
+            else{System.out.printf("%d | ",i+1);}
             for(int j = 0; j <q_vertices();j++){
                 if(this.Grafo[i][j]<10){System.out.printf("  "+this.Grafo[i][j]+"  ");}
                 else if(this.Grafo[i][j] < 100){System.out.printf("  "+this.Grafo[i][j]+" ");}
@@ -220,13 +219,13 @@ public class Graph {
         //Codigo para imprimir a distância mínima
         System.out.printf("     ");
         for(int i = 0; i<q_vertices();i++){
-            if(i<10){System.out.printf("  %d  ", i);}
-            else{System.out.printf(" %d  ", i);}
+            if(i<10){System.out.printf("  %d  ", i+1);}
+            else{System.out.printf(" %d  ", i+1);}
         }
         System.out.println();
         for(int i = 0; i<q_vertices();i++){
-            if(i<10){System.out.printf(" %d | ",i);}
-            else{System.out.printf("%d | ",i);}
+            if(i<9){System.out.printf(" %d | ",i+1);}
+            else{System.out.printf("%d | ",i+1);}
             for(int j = 0; j <q_vertices();j++){
                 if(this.Distancia[i][j]<10){System.out.printf("  "+this.Distancia[i][j]+"  ");}
                 else if(this.Distancia[i][j] < 100){System.out.printf("  "+this.Distancia[i][j]+" ");}
@@ -239,13 +238,23 @@ public class Graph {
 
     private void printVetorSoma(){
         for(int i = 0; i<this.vetorSoma.length;i++){
-            System.out.printf("%d : %d\n", i, this.vetorSoma[i]);
+            if(i<9){
+                System.out.printf(" %d : %d\n", i+1, this.vetorSoma[i]);                
+            }
+            else{
+                System.out.printf("%d : %d\n", i+1, this.vetorSoma[i]);
+            }
         }
     }
 
     private void printVetorMaximo(){
         for(int i = 0; i<this.vetorMaximo.length;i++){
-            System.out.printf("%d : %d\n", i, this.vetorMaximo[i]);
+            if(i<9){
+                System.out.printf(" %d : %d\n", i+1, this.vetorMaximo[i]);                
+            }
+            else{
+                System.out.printf("%d : %d\n", i+1, this.vetorMaximo[i]);
+            }
         }
     }
 
@@ -261,7 +270,7 @@ public class Graph {
                 node = i;
             }
         }
-        return node;
+        return node+1;
     }
 
 }
